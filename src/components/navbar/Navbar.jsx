@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        Ale
+        ale
       </Link>
 
       <div className={styles.links}>
