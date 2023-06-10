@@ -3,14 +3,14 @@ import connect from "@/utils/db";
 import Post2 from "@/models/Post";
 
 export const GET = async (request) => {
-  // const url = new URL(request.url);
+  const url = new URL(request.url);
 
-  // const username = url.searchParams.get("username");
+  const username = url.searchParams.get("username");
 
   try {
     await connect();
 
-    const posts = await Post2.find();
+    const posts = await Post2.find(username && { username });
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {
@@ -18,18 +18,18 @@ export const GET = async (request) => {
   }
 };
 
-// export const POST = async (request) => {
-//   const body = await request.json();
+export const POST = async (request) => {
+  const body = await request.json();
 
-//   const newPost = new Post(body);
+  const newPost = new Post2(body);
 
-//   try {
-//     await connect();
+  try {
+    await connect();
 
-//     await newPost.save();
+    await newPost.save();
 
-//     return new NextResponse("Post has been created", { status: 201 });
-//   } catch (err) {
-//     return new NextResponse("Database Error", { status: 500 });
-//   }
-// };
+    return new NextResponse("Post has been created", { status: 201 });
+  } catch (err) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};
