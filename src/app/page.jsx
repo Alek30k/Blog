@@ -4,6 +4,8 @@ import Hero from "public/hero.png";
 import Button from "@/components/Button/Button";
 
 export default function Home() {
+  const PF = process.env.REACT_APP_MONGO;
+  console.log(PF);
   return (
     <div className={styles.container}>
       <div className={styles.item}>
