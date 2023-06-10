@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connect from "@/utils/db";
-import Post from "@/models/Post";
+import Post2 from "@/models/Post";
 
 export const GET = async (request, { params }) => {
   const { id } = params;
@@ -8,7 +8,7 @@ export const GET = async (request, { params }) => {
   try {
     await connect();
 
-    const post = await Post.findById(id);
+    const post = await Post2.findById(id);
 
     return new NextResponse(JSON.stringify(post), { status: 200 });
   } catch (err) {
@@ -22,7 +22,7 @@ export const DELETE = async (request, { params }) => {
   try {
     await connect();
 
-    await Post.findByIdAndDelete(id);
+    await Post2.findByIdAndDelete(id);
 
     return new NextResponse("Post has been deleted", { status: 200 });
   } catch (err) {
