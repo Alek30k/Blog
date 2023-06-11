@@ -59,6 +59,7 @@ const Login = ({ url }) => {
       </form>
       <button
         onClick={() => {
+          e.preventDefault();
           signIn("google");
         }}
         className={styles.button + " " + styles.google}
