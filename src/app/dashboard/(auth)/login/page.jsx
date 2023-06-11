@@ -12,10 +12,10 @@ const Login = ({ url }) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  useEffect(() => {
-    setError(params.get("error"));
-    setSuccess(params.get("success"));
-  }, [params]);
+  // useEffect(() => {
+  //   setError(params.get("error"));
+  //   setSuccess(params.get("success"));
+  // }, [params]);
 
   if (session.status === "loading") {
     return <p>Loading...</p>;
