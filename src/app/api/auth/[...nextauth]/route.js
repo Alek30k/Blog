@@ -21,26 +21,20 @@ const handler = NextAuth({
           });
 
           if (user) {
-            console.log("encontro usuario", user);
             const isPasswordCorrect = await bcrypt.compare(
               credentials.password,
               user.password
             );
 
             if (isPasswordCorrect) {
-              console.log("encontro pasword", isPasswordCorrect);
               return user;
             } else {
-              console.log("no encontro pasword");
-
               throw new Error("Wrong Credentials!");
             }
           } else {
-            console.log("user no encontro");
             throw new Error("User not found!");
           }
         } catch (err) {
-          console.log("Todo mal");
           throw new Error(err);
         }
       },
@@ -49,15 +43,15 @@ const handler = NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_CLIENT_ID,
-    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // }),
     GoogleProvider({
-      clientId:
-        "169313336883-d6pltjeqirolb47r84rrmigvei36avcs.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
+    // GoogleProvider({
+    //   clientId:
+    //     "169313336883-d6pltjeqirolb47r84rrmigvei36avcs.apps.googleusercontent.com",
+    //   clientSecret: "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",
+    // }),
   ],
   pages: {
     error: "/dashboard/login",

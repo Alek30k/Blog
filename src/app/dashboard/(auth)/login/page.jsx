@@ -60,7 +60,7 @@ const Login = ({ url }) => {
       <button
         onClick={(e) => {
           e.preventDefault();
-          signIn("google", { callbackUrl: "/" });
+          signIn("google");
         }}
         className={styles.button + " " + styles.google}
       >
