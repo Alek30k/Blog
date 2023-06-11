@@ -60,7 +60,7 @@ const Dashboard = () => {
     const content = e.target[3].value;
 
     try {
-      await fetch("https://blog-next-dc46sfu9w-alek30k.vercel.app/api/posts", {
+      await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
@@ -79,12 +79,9 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(
-        `https://blog-next-dc46sfu9w-alek30k.vercel.app/api/posts/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
       mutate();
     } catch (err) {
       console.log(err);
