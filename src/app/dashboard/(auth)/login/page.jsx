@@ -58,7 +58,7 @@ const Login = ({ url }) => {
         {error && error}
       </form>
       <button
-        onClick={() => {
+        onClick={(e) => {
           e.preventDefault();
           signIn("google");
         }}
