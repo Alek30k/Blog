@@ -16,20 +16,17 @@ const Register = () => {
     const password = e.target[2].value;
 
     try {
-      const res = await fetch(
-        "https://blog-next-7zhlpnpcg-alek30k.vercel.app/api/auth/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            password,
-          }),
-        }
-      );
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
       res.status === 201 &&
         router.push("/dashboard/login?success=Account has been created");
     } catch (err) {
