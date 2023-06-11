@@ -26,10 +26,10 @@ const Login = ({ url }) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
 
+    e.preventDefault();
     signIn("credentials", {
       email,
       password,

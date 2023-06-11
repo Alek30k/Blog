@@ -20,8 +20,6 @@ const handler = NextAuth({
             email: credentials.email,
           });
 
-          console.log(user);
-
           if (user) {
             const isPasswordCorrect = await bcrypt.compare(
               credentials.password,
