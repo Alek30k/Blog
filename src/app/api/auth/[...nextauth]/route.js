@@ -51,6 +51,8 @@ const handler = NextAuth({
       clientId:
         "169313336883-d6pltjeqirolb47r84rrmigvei36avcs.apps.googleusercontent.com",
       clientSecret: "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",
+      secret: process.env.NEXTAUTH_SECRET,
+      secret: "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",
     }),
   ],
 
