@@ -31,9 +31,7 @@ const Register = () => {
         }
       );
       res.status === 201 &&
-        router.push(
-          "https://blog-next-7zhlpnpcg-alek30k.vercel.app/dashboard/login?success=Account has been created"
-        );
+        router.push("/dashboard/login?success=Account has been created");
     } catch (err) {
       setError(err);
       console.log(err);
