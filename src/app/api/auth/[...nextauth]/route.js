@@ -21,20 +21,26 @@ const handler = NextAuth({
           });
 
           if (user) {
+            console.log("encontro usuario", user);
             const isPasswordCorrect = await bcrypt.compare(
               credentials.password,
               user.password
             );
 
             if (isPasswordCorrect) {
+              console.log("encontro pasword", isPasswordCorrect);
               return user;
             } else {
+              console.log("no encontro pasword");
+
               throw new Error("Wrong Credentials!");
             }
           } else {
+            console.log("user no encontro");
             throw new Error("User not found!");
           }
         } catch (err) {
+          console.log("Todo mal");
           throw new Error(err);
         }
       },
