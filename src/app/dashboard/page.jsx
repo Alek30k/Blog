@@ -60,7 +60,7 @@ const Dashboard = () => {
     const content = e.target[3].value;
 
     try {
-      await fetch("/api/posts", {
+      await fetch("https://blog-next-7zhlpnpcg-alek30k.vercel.app/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
