@@ -43,16 +43,17 @@ const handler = NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
     // GoogleProvider({
-    //   clientId:
-    //     "169313336883-d6pltjeqirolb47r84rrmigvei36avcs.apps.googleusercontent.com",
-    //   clientSecret: "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",
+    //   clientId: process.env.GOOGLE_CLIENT_ID,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     // }),
+    GoogleProvider({
+      clientId:
+        "169313336883-d6pltjeqirolb47r84rrmigvei36avcs.apps.googleusercontent.com",
+      clientSecret: "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",
+    }),
   ],
+
   pages: {
     error: "/dashboard/login",
   },
