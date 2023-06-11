@@ -40,7 +40,7 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, mutate, error, isLoading } = useSWR(
-    `/api/posts?username=${session?.data?.user.name}`,
+    `https://blog-next-dc46sfu9w-alek30k.vercel.app/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
 
