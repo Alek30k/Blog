@@ -40,7 +40,7 @@ const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, mutate, error, isLoading } = useSWR(
-    `https://blog-next-7zhlpnpcg-alek30k.vercel.app/api/posts?username=${session?.data?.user.name}`,
+    `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
 
@@ -60,7 +60,7 @@ const Dashboard = () => {
     const content = e.target[3].value;
 
     try {
-      await fetch("https://blog-next-7zhlpnpcg-alek30k.vercel.app/api/posts", {
+      await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
