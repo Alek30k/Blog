@@ -16,12 +16,17 @@
 
 .imgContainer {
   width: 200px;
-  height: 100px;
+  height: 150px;
   position: Ū;
 }
 
 .img {
   object-fit: cover;
+}
+
+.imgPost {
+  object-fit: contain;
+  background-color: aqua;
 }
 
 .delete {
